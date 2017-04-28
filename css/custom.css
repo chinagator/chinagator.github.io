@@ -265,7 +265,6 @@ td.check-column {
     position: fixed;
     
     bottom: 0;
-    left:18.5%;
     width: 1200px;
     background-color: brown;
     display: flex;

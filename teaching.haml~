@@ -41,13 +41,13 @@
           %br
           .row.teachingsize
             %strong(class= 'col-md-2' style='text-align:right')
-            .col-md-10{:class=> 'col-md-10 blue' } Introduction to Parallel  Programming
+            .col-md-10{:class=> 'col-md-10 blue' } Concurrent Programming Language Design
           .row.big
             .col-md-10{:class=> 'col-md-offset-2'} 2013 Spring, 2014 Spring, 2015 Spring, 2015 Fall, 2016 Fall
           %br
           .row.teachingsize
             %strong(class= 'col-md-2' style='text-align:right')
-            .col-md-10{:class=> 'col-md-10 blue' } Software Testing
+            .col-md-10{:class=> 'col-md-10 blue' } Software Quality Assurance
           .row.big
             .col-md-10{:class=> 'col-md-offset-2'} 2013 Fall
           %br

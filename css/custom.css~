@@ -34,7 +34,7 @@ html, body {
 }
 
 #nav-picture {
-   
+    margin-top: 20px;
     /*margin-right: 130px;*/
     width: 150px;
     height: 200px;

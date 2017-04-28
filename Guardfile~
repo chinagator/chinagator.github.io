@@ -45,5 +45,7 @@ guard :shell do
   watch "publications.py" do
     `./publications.py haml > _conferences.haml`
     `./publications.py haml_article > _journals.haml`
+    `./publications.py haml_preprint > _preprints.haml`
+    `./publications.py haml_news > _news.haml`
   end
 end

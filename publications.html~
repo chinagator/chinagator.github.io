@@ -60,11 +60,11 @@
                       <a data-placement='top' data-toggle='tooltip' href='https://doi.org/10.1109/TCAD.2017.2681076' target='_blank' title='Open paper'>
                         <span class='glyphicon glyphicon-new-window'></span>
                       </a>
-                      <a data-placement='top' data-toggle='tooltip' href='papers/J25.pdf' title='View PDF'>
+                      <a data-placement='top' data-toggle='tooltip' href='papers/J24.pdf' title='View PDF'>
                         <span class='glyphicon glyphicon-cloud-download'></span>
                       </a>
                     </div>
-                    <h4 class='pubtitle' id='j25'>
+                    <h4 class='pubtitle' id='j24'>
                       <a href='https://doi.org/10.1109/TCAD.2017.2681076' target='_blank'>Quantitative Performance Evaluation of Uncertainty-Aware Hybrid AADL Designs Using Statistical Model Checking</a>
                     </h4>
                     <div class='pubauthor'>
@@ -75,7 +75,7 @@
                       Frederic Mallet
                     </div>
                     <div class='pubcite'>
-                      <span class='label label-info'>J25</span>
+                      <span class='label label-info'>J24</span>
                       In IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems   | <a href="https://github.com/tony11231/aadl2uppaal" target="_blank"> tools </a>
                     </div>
                   </div>
@@ -87,11 +87,11 @@
                       <a data-placement='top' data-toggle='tooltip' href='http://doi.org/10.1016/j.micpro.2017.04.002' target='_blank' title='Open paper'>
                         <span class='glyphicon glyphicon-new-window'></span>
                       </a>
-                      <a data-placement='top' data-toggle='tooltip' href='papers/J24.pdf' title='View PDF'>
+                      <a data-placement='top' data-toggle='tooltip' href='papers/J23.pdf' title='View PDF'>
                         <span class='glyphicon glyphicon-cloud-download'></span>
                       </a>
                     </div>
-                    <h4 class='pubtitle' id='j24'>
+                    <h4 class='pubtitle' id='j23'>
                       <a href='http://doi.org/10.1016/j.micpro.2017.04.002' target='_blank'>Emerging technology enabled energy-efficient gpgpus register file</a>
                     </h4>
                     <div class='pubauthor'>
@@ -103,7 +103,7 @@
                       Xin Fu
                     </div>
                     <div class='pubcite'>
-                      <span class='label label-info'>J24</span>
+                      <span class='label label-info'>J23</span>
                       In Journal of Microprocessors and Microsystems
                     </div>
                   </div>
@@ -115,11 +115,11 @@
                       <a data-placement='top' data-toggle='tooltip' href='https://doi.org/10.1109/TCC.2016.2586067' target='_blank' title='Open paper'>
                         <span class='glyphicon glyphicon-new-window'></span>
                       </a>
-                      <a data-placement='top' data-toggle='tooltip' href='papers/J23.pdf' title='View PDF'>
+                      <a data-placement='top' data-toggle='tooltip' href='papers/J20.pdf' title='View PDF'>
                         <span class='glyphicon glyphicon-cloud-download'></span>
                       </a>
                     </div>
-                    <h4 class='pubtitle' id='j23'>
+                    <h4 class='pubtitle' id='j20'>
                       <a href='https://doi.org/10.1109/TCC.2016.2586067' target='_blank'>Statistical Model Checking-Based Evaluation and Optimization forCloud Workflow Resource Allocation</a>
                     </h4>
                     <div class='pubauthor'>
@@ -130,7 +130,7 @@
                       Jifeng He
                     </div>
                     <div class='pubcite'>
-                      <span class='label label-info'>J23</span>
+                      <span class='label label-info'>J20</span>
                       In IEEE Transactions on Cloud Computing
                     </div>
                   </div>
@@ -138,11 +138,11 @@
                 <div class='item'>
                   <div class='pubmain'>
                     <div class='pubassets'>
-                      <a data-placement='top' data-toggle='tooltip' href='papers/J22.pdf' title='View PDF'>
+                      <a data-placement='top' data-toggle='tooltip' href='papers/J19.pdf' title='View PDF'>
                         <span class='glyphicon glyphicon-cloud-download'></span>
                       </a>
                     </div>
-                    <h4 class='pubtitle' id='j22'>
+                    <h4 class='pubtitle' id='j19'>
                       <a href='' target='_blank'>Exploring Energy-Efficient Cache Design in Emerging Mobile Platforms</a>
                     </h4>
                     <div class='pubauthor'>
@@ -152,7 +152,7 @@
                       Xin Fu
                     </div>
                     <div class='pubcite'>
-                      <span class='label label-info'>J22</span>
+                      <span class='label label-info'>J19</span>
                       In ACM Transactions on Design Automation of Electronic Systems
                     </div>
                   </div>
@@ -167,11 +167,11 @@
                       <a data-placement='top' data-toggle='tooltip' href='https://doi.org/10.1109/TPDS.2016.2621768' target='_blank' title='Open paper'>
                         <span class='glyphicon glyphicon-new-window'></span>
                       </a>
-                      <a data-placement='top' data-toggle='tooltip' href='papers/J21.pdf' title='View PDF'>
+                      <a data-placement='top' data-toggle='tooltip' href='papers/J25.pdf' title='View PDF'>
                         <span class='glyphicon glyphicon-cloud-download'></span>
                       </a>
                     </div>
-                    <h4 class='pubtitle' id='j21'>
+                    <h4 class='pubtitle' id='j25'>
                       <a href='https://doi.org/10.1109/TPDS.2016.2621768' target='_blank'>Efficient Resource Constrained Scheduling using Parallel Two-Phase Branch-and-Bound Heuristics</a>
                     </h4>
                     <div class='pubauthor'>
@@ -181,7 +181,7 @@
                       Tongquan Wei
                     </div>
                     <div class='pubcite'>
-                      <span class='label label-info'>J21</span>
+                      <span class='label label-info'>J25</span>
                       In IEEE Transactions on Parallel and Distributed Systems 28(5), 2017 | Pages 1299-1314  | <a href="http://faculty.ecnu.edu.cn/picture/article/223/26/c1/e0470b9e49a4898a8f5ac9d1f684/05ae9b2d-c416-4d12-8baf-08233db7d3fc.zip" target="_blank"> tools </a>  | <a href="http://faculty.ecnu.edu.cn/picture/article/223/26/c1/e0470b9e49a4898a8f5ac9d1f684/69187182-6aa0-4cd2-96b8-5cf3079664e6.zip" target="_blank"> benchmarks </a>
                     </div>
                   </div>
@@ -193,11 +193,11 @@
                       <a data-placement='top' data-toggle='tooltip' href='http://dx.doi.org/10.1142/S0218126617500165' target='_blank' title='Open paper'>
                         <span class='glyphicon glyphicon-new-window'></span>
                       </a>
-                      <a data-placement='top' data-toggle='tooltip' href='papers/J20.pdf' title='View PDF'>
+                      <a data-placement='top' data-toggle='tooltip' href='papers/J22.pdf' title='View PDF'>
                         <span class='glyphicon glyphicon-cloud-download'></span>
                       </a>
                     </div>
-                    <h4 class='pubtitle' id='j20'>
+                    <h4 class='pubtitle' id='j22'>
                       <a href='http://dx.doi.org/10.1142/S0218126617500165' target='_blank'>Fault-Tolerant Task Scheduling for Mixed-Criticality Real-TimeSystems</a>
                     </h4>
                     <div class='pubauthor'>
@@ -211,7 +211,7 @@
                       Xin Fu
                     </div>
                     <div class='pubcite'>
-                      <span class='label label-info'>J20</span>
+                      <span class='label label-info'>J22</span>
                       In Journal of Circuits, Systems and Computers 26(1), 2017 | Pages 1-17
                     </div>
                   </div>
@@ -223,11 +223,11 @@
                       <a data-placement='top' data-toggle='tooltip' href='http://dx.doi.org/10.1142/S0218126617500220' target='_blank' title='Open paper'>
                         <span class='glyphicon glyphicon-new-window'></span>
                       </a>
-                      <a data-placement='top' data-toggle='tooltip' href='papers/J19.pdf' title='View PDF'>
+                      <a data-placement='top' data-toggle='tooltip' href='papers/J21.pdf' title='View PDF'>
                         <span class='glyphicon glyphicon-cloud-download'></span>
                       </a>
                     </div>
-                    <h4 class='pubtitle' id='j19'>
+                    <h4 class='pubtitle' id='j21'>
                       <a href='http://dx.doi.org/10.1142/S0218126617500220' target='_blank'>GPU-Based Fluid Motion Estimation using Energy Constrain</a>
                     </h4>
                     <div class='pubauthor'>
@@ -238,7 +238,7 @@
                       <strong>Mingsong Chen</strong>
                     </div>
                     <div class='pubcite'>
-                      <span class='label label-info'>J19</span>
+                      <span class='label label-info'>J21</span>
                       In Journal of Circuits, Systems and Computers 26(2), 2017 | Pages 1-20
                     </div>
                   </div>

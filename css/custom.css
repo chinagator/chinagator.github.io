@@ -262,7 +262,7 @@ td.check-column {
 #navibar {
     line-height: 35px;
     margin: 0 auto 0 auto;
-   
+    position： fixed;
     
     bottom: 0;
     width: 1200px;

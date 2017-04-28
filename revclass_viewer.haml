@@ -1,0 +1,19 @@
+!!! 5
+- require 'json'
+%html
+  %head
+    = Haml::Engine.new(File.read('_header.haml')).render(Object.new, :title => 'Mathias Soeken / Reversible circuit classification')
+  %body
+    .container#main-container
+      .row#main-row
+        = Haml::Engine.new(File.read('_nav.haml')).render(Object.new, :page => "cirkit")
+        .col-md-9
+          %h1#header Reversible Circuit Classification [NPNP-2 0,1,2,3]
+          %p
+            %a(href="revclass.html") Back to all classes
+          %p
+            Download on the circuit picture to download the *.real file
+          .revclass-grid
+    %script(src="js/jquery.min.js")
+    %script(src="js/underscore.min.js")
+    %script(src="js/revclass_viewer.js")

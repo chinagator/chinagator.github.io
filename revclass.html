@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1' name='viewport'>
+    <title>Mathias Soeken / Reversible circuit classification</title>
+    <link href='css/bootstrap.min.css' rel='stylesheet'>
+    <link href='css/custom.css' rel='stylesheet'>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-70660599-1', 'auto');
+      ga('send', 'pageview', location.pathname);
+    </script>
+  </head>
+  <body>
+    <div class='container' id='main-container'>
+      <div class='row' id='main-row'>
+        <div id='navibar'>
+          <div class='row'>
+            <div class='col-md-2'>
+              <a href='index.html'>About me</a>
+              <div>
+                |
+              </div>
+            </div>
+            <div class='col-md-2'>
+              <a href='publications.html'>Publications</a>
+              <div>
+                |
+              </div>
+            </div>
+            <div class='col-md-2'>
+              <a href='project.html'>Projects</a>
+              <div>
+                |
+              </div>
+            </div>
+            <div class='col-md-2'>
+              <a href='teaching.html'>Teaching</a>
+              <div>
+                |
+              </div>
+            </div>
+            <div class='col-md-2'>
+              <a href='research.html'>Services</a>
+              <div>
+                |
+              </div>
+            </div>
+            <div class='col-md-2'>
+              <a href='talks.html'>Students</a>
+            </div>
+          </div>
+        </div>
+        <div class='col-md-9'>
+          <h1>Reversible Circuit Classification</h1>
+          <p>
+            This page lists the benchmarks for the reversible reciprocal circuits reported in
+          </p>
+          <p>
+            Mathias Soeken, Nabila Abdessaied, and Giovanni De Micheli:
+            <a href='publications.html#c68'>Enumeration of reversible functions and its application to circuit complexity,</a>
+            <i>Conference on Reversible Computation,</i>
+            2016, 255&ndash;270.
+          </p>
+          <div class='row'>
+            <div class='col-md-4'>
+              <h3>2-variable functions</h3>
+              <ul class='nav nav-tabs'>
+                <li>
+                  <a href='#npnp2'>NPNP</a>
+                </li>
+                <li>
+                  <a href='#ll2'>LL</a>
+                </li>
+                <li>
+                  <a href='#aa2'>AA</a>
+                </li>
+              </ul>
+              <h4 id='npnp2'>NPNP-equivalence</h4>
+              <table class='table table-striped table-hover table-bordered'>
+                <tr>
+                  <th>Representative</th>
+                  <th>Size</th>
+                  <th>Min</th>
+                  <th>Max</th>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=2&amp;cls=npnp&amp;repr=0123'>
+                        0,1,2,3
+                      </a>
+                    </td>
+                    <td class='number'>8</td>
+                    <td class='number'>0</td>
+                    <td class='number'>3</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=2&amp;cls=npnp&amp;repr=0132'>
+                        0,1,3,2
+                      </a>
+                    </td>
+                    <td class='number'>16</td>
+                    <td class='number'>1</td>
+                    <td class='number'>2</td>
+                  </tr>
+                </tr>
+              </table>
+              <h4 id='ll2'>LL-equivalence</h4>
+              <table class='table table-striped table-hover table-bordered'>
+                <tr>
+                  <th>Representative</th>
+                  <th>Size</th>
+                  <th>Min</th>
+                  <th>Max</th>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=2&amp;cls=ll&amp;repr=0123'>
+                        0,1,2,3
+                      </a>
+                    </td>
+                    <td class='number'>6</td>
+                    <td class='number'>0</td>
+                    <td class='number'>3</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=2&amp;cls=ll&amp;repr=1023'>
+                        1,0,2,3
+                      </a>
+                    </td>
+                    <td class='number'>18</td>
+                    <td class='number'>1</td>
+                    <td class='number'>3</td>
+                  </tr>
+                </tr>
+              </table>
+              <h4 id='aa2'>AA-equivalence</h4>
+              <table class='table table-striped table-hover table-bordered'>
+                <tr>
+                  <th>Representative</th>
+                  <th>Size</th>
+                  <th>Min</th>
+                  <th>Max</th>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=2&amp;cls=aa&amp;repr=0123'>
+                        0,1,2,3
+                      </a>
+                    </td>
+                    <td class='number'>24</td>
+                    <td class='number'>0</td>
+                    <td class='number'>3</td>
+                  </tr>
+                </tr>
+              </table>
+            </div>
+            <div class='col-md-1'></div>
+            <div class='col-md-4'>
+              <h3>3-variable functions</h3>
+              <ul class='nav nav-tabs'>
+                <li>
+                  <a href='#npnp3'>NPNP</a>
+                </li>
+                <li>
+                  <a href='#ll3'>LL</a>
+                </li>
+                <li>
+                  <a href='#aa3'>AA</a>
+                </li>
+              </ul>
+              <h4 id='npnp3'>NPNP-equivalence</h4>
+              <table class='table table-striped table-hover table-bordered'>
+                <tr>
+                  <th>Representative</th>
+                  <th>Size</th>
+                  <th>Min</th>
+                  <th>Max</th>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01234567'>
+                        0,1,2,3,4,5,6,7
+                      </a>
+                    </td>
+                    <td class='number'>48</td>
+                    <td class='number'>0</td>
+                    <td class='number'>6</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01235476'>
+                        0,1,2,3,5,4,7,6
+                      </a>
+                    </td>
+                    <td class='number'>288</td>
+                    <td class='number'>1</td>
+                    <td class='number'>5</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01234576'>
+                        0,1,2,3,4,5,7,6
+                      </a>
+                    </td>
+                    <td class='number'>576</td>
+                    <td class='number'>1</td>
+                    <td class='number'>5</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01327645'>
+                        0,1,3,2,7,6,4,5
+                      </a>
+                    </td>
+                    <td class='number'>288</td>
+                    <td class='number'>2</td>
+                    <td class='number'>5</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01325467'>
+                        0,1,3,2,5,4,6,7
+                      </a>
+                    </td>
+                    <td class='number'>144</td>
+                    <td class='number'>2</td>
+                    <td class='number'>4</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01326754'>
+                        0,1,3,2,6,7,5,4
+                      </a>
+                    </td>
+                    <td class='number'>288</td>
+                    <td class='number'>2</td>
+                    <td class='number'>5</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01237654'>
+                        0,1,2,3,7,6,5,4
+                      </a>
+                    </td>
+                    <td class='number'>144</td>
+                    <td class='number'>2</td>
+                    <td class='number'>5</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01275436'>
+                        0,1,2,7,5,4,3,6
+                      </a>
+                    </td>
+                    <td class='number'>576</td>
+                    <td class='number'>2</td>
+                    <td class='number'>5</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01235674'>
+                        0,1,2,3,5,6,7,4
+                      </a>
+                    </td>
+                    <td class='number'>1152</td>
+                    <td class='number'>2</td>
+                    <td class='number'>5</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01256743'>
+                        0,1,2,5,6,7,4,3
+                      </a>
+                    </td>
+                    <td class='number'>576</td>
+                    <td class='number'>2</td>
+                    <td class='number'>5</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01234675'>
+                        0,1,2,3,4,6,7,5
+                      </a>
+                    </td>
+                    <td class='number'>2304</td>
+                    <td class='number'>2</td>
+                    <td class='number'>6</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01275463'>
+                        0,1,2,7,5,4,6,3
+                      </a>
+                    </td>
+                    <td class='number'>1152</td>
+                    <td class='number'>2</td>
+                    <td class='number'>5</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=03567421'>
+                        0,3,5,6,7,4,2,1
+                      </a>
+                    </td>
+                    <td class='number'>144</td>
+                    <td class='number'>3</td>
+                    <td class='number'>4</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01325647'>
+                        0,1,3,2,5,6,4,7
+                      </a>
+                    </td>
+                    <td class='number'>576</td>
+                    <td class='number'>3</td>
+                    <td class='number'>5</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01367245'>
+                        0,1,3,6,7,2,4,5
+                      </a>
+                    </td>
+                    <td class='number'>576</td>
+                    <td class='number'>3</td>
+                    <td class='number'>4</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01273654'>
+                        0,1,2,7,3,6,5,4
+                      </a>
+                    </td>
+                    <td class='number'>576</td>
+                    <td class='number'>3</td>
+                    <td class='number'>5</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01234657'>
+                        0,1,2,3,4,6,5,7
+                      </a>
+                    </td>
+                    <td class='number'>288</td>
+                    <td class='number'>3</td>
+                    <td class='number'>5</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01257634'>
+                        0,1,2,5,7,6,3,4
+                      </a>
+                    </td>
+                    <td class='number'>288</td>
+                    <td class='number'>3</td>
+                    <td class='number'>6</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01253674'>
+                        0,1,2,5,3,6,7,4
+                      </a>
+                    </td>
+                    <td class='number'>1152</td>
+                    <td class='number'>3</td>
+                    <td class='number'>5</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01275634'>
+                        0,1,2,7,5,6,3,4
+                      </a>
+                    </td>
+                    <td class='number'>1152</td>
+                    <td class='number'>3</td>
+                    <td class='number'>5</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01325764'>
+                        0,1,3,2,5,7,6,4
+                      </a>
+                    </td>
+                    <td class='number'>576</td>
+                    <td class='number'>3</td>
+                    <td class='number'>5</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01346752'>
+                        0,1,3,4,6,7,5,2
+                      </a>
+                    </td>
+                    <td class='number'>576</td>
+                    <td class='number'>3</td>
+                    <td class='number'>4</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01273456'>
+                        0,1,2,7,3,4,5,6
+                      </a>
+                    </td>
+                    <td class='number'>1152</td>
+                    <td class='number'>3</td>
+                    <td class='number'>5</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01247653'>
+                        0,1,2,4,7,6,5,3
+                      </a>
+                    </td>
+                    <td class='number'>576</td>
+                    <td class='number'>3</td>
+                    <td class='number'>5</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01257643'>
+                        0,1,2,5,7,6,4,3
+                      </a>
+                    </td>
+                    <td class='number'>1152</td>
+                    <td class='number'>3</td>
+                    <td class='number'>5</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01245673'>
+                        0,1,2,4,5,6,7,3
+                      </a>
+                    </td>
+                    <td class='number'>1152</td>
+                    <td class='number'>3</td>
+                    <td class='number'>5</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01247356'>
+                        0,1,2,4,7,3,5,6
+                      </a>
+                    </td>
+                    <td class='number'>1152</td>
+                    <td class='number'>3</td>
+                    <td class='number'>5</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01254673'>
+                        0,1,2,5,4,6,7,3
+                      </a>
+                    </td>
+                    <td class='number'>2304</td>
+                    <td class='number'>3</td>
+                    <td class='number'>6</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01235746'>
+                        0,1,2,3,5,7,4,6
+                      </a>
+                    </td>
+                    <td class='number'>288</td>
+                    <td class='number'>3</td>
+                    <td class='number'>5</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01245637'>
+                        0,1,2,4,5,6,3,7
+                      </a>
+                    </td>
+                    <td class='number'>1152</td>
+                    <td class='number'>3</td>
+                    <td class='number'>6</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01243675'>
+                        0,1,2,4,3,6,7,5
+                      </a>
+                    </td>
+                    <td class='number'>2304</td>
+                    <td class='number'>3</td>
+                    <td class='number'>6</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01275643'>
+                        0,1,2,7,5,6,4,3
+                      </a>
+                    </td>
+                    <td class='number'>2304</td>
+                    <td class='number'>3</td>
+                    <td class='number'>6</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01253647'>
+                        0,1,2,5,3,6,4,7
+                      </a>
+                    </td>
+                    <td class='number'>1152</td>
+                    <td class='number'>3</td>
+                    <td class='number'>6</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01367452'>
+                        0,1,3,6,7,4,5,2
+                      </a>
+                    </td>
+                    <td class='number'>384</td>
+                    <td class='number'>3</td>
+                    <td class='number'>6</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01347625'>
+                        0,1,3,4,7,6,2,5
+                      </a>
+                    </td>
+                    <td class='number'>288</td>
+                    <td class='number'>4</td>
+                    <td class='number'>5</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01345627'>
+                        0,1,3,4,5,6,2,7
+                      </a>
+                    </td>
+                    <td class='number'>1152</td>
+                    <td class='number'>4</td>
+                    <td class='number'>5</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01345267'>
+                        0,1,3,4,5,2,6,7
+                      </a>
+                    </td>
+                    <td class='number'>288</td>
+                    <td class='number'>4</td>
+                    <td class='number'>5</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01376254'>
+                        0,1,3,7,6,2,5,4
+                      </a>
+                    </td>
+                    <td class='number'>288</td>
+                    <td class='number'>4</td>
+                    <td class='number'>5</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01253476'>
+                        0,1,2,5,3,4,7,6
+                      </a>
+                    </td>
+                    <td class='number'>576</td>
+                    <td class='number'>4</td>
+                    <td class='number'>5</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01245376'>
+                        0,1,2,4,5,3,7,6
+                      </a>
+                    </td>
+                    <td class='number'>576</td>
+                    <td class='number'>4</td>
+                    <td class='number'>5</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01254376'>
+                        0,1,2,5,4,3,7,6
+                      </a>
+                    </td>
+                    <td class='number'>576</td>
+                    <td class='number'>4</td>
+                    <td class='number'>6</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01245367'>
+                        0,1,2,4,5,3,6,7
+                      </a>
+                    </td>
+                    <td class='number'>576</td>
+                    <td class='number'>4</td>
+                    <td class='number'>6</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01243576'>
+                        0,1,2,4,3,5,7,6
+                      </a>
+                    </td>
+                    <td class='number'>576</td>
+                    <td class='number'>4</td>
+                    <td class='number'>6</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01247365'>
+                        0,1,2,4,7,3,6,5
+                      </a>
+                    </td>
+                    <td class='number'>1152</td>
+                    <td class='number'>4</td>
+                    <td class='number'>6</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01365724'>
+                        0,1,3,6,5,7,2,4
+                      </a>
+                    </td>
+                    <td class='number'>576</td>
+                    <td class='number'>4</td>
+                    <td class='number'>5</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01243657'>
+                        0,1,2,4,3,6,5,7
+                      </a>
+                    </td>
+                    <td class='number'>576</td>
+                    <td class='number'>4</td>
+                    <td class='number'>5</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01247563'>
+                        0,1,2,4,7,5,6,3
+                      </a>
+                    </td>
+                    <td class='number'>576</td>
+                    <td class='number'>4</td>
+                    <td class='number'>6</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01345762'>
+                        0,1,3,4,5,7,6,2
+                      </a>
+                    </td>
+                    <td class='number'>1152</td>
+                    <td class='number'>4</td>
+                    <td class='number'>5</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01254637'>
+                        0,1,2,5,4,6,3,7
+                      </a>
+                    </td>
+                    <td class='number'>384</td>
+                    <td class='number'>4</td>
+                    <td class='number'>6</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01245736'>
+                        0,1,2,4,5,7,3,6
+                      </a>
+                    </td>
+                    <td class='number'>1152</td>
+                    <td class='number'>4</td>
+                    <td class='number'>6</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01253746'>
+                        0,1,2,5,3,7,4,6
+                      </a>
+                    </td>
+                    <td class='number'>1152</td>
+                    <td class='number'>4</td>
+                    <td class='number'>6</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=npnp&amp;repr=01243567'>
+                        0,1,2,4,3,5,6,7
+                      </a>
+                    </td>
+                    <td class='number'>192</td>
+                    <td class='number'>5</td>
+                    <td class='number'>6</td>
+                  </tr>
+                </tr>
+              </table>
+              <h4 id='ll3'>LL-equivalence</h4>
+              <table class='table table-striped table-hover table-bordered'>
+                <tr>
+                  <th>Representative</th>
+                  <th>Size</th>
+                  <th>Min</th>
+                  <th>Max</th>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=ll&amp;repr=01234567'>
+                        0,1,2,3,4,5,6,7
+                      </a>
+                    </td>
+                    <td class='number'>168</td>
+                    <td class='number'>0</td>
+                    <td class='number'>6</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=ll&amp;repr=10234576'>
+                        1,0,2,3,4,5,7,6
+                      </a>
+                    </td>
+                    <td class='number'>1176</td>
+                    <td class='number'>1</td>
+                    <td class='number'>6</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=ll&amp;repr=01234576'>
+                        0,1,2,3,4,5,7,6
+                      </a>
+                    </td>
+                    <td class='number'>1176</td>
+                    <td class='number'>1</td>
+                    <td class='number'>6</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=ll&amp;repr=10234567'>
+                        1,0,2,3,4,5,6,7
+                      </a>
+                    </td>
+                    <td class='number'>1176</td>
+                    <td class='number'>1</td>
+                    <td class='number'>6</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=ll&amp;repr=10234675'>
+                        1,0,2,3,4,6,7,5
+                      </a>
+                    </td>
+                    <td class='number'>7056</td>
+                    <td class='number'>2</td>
+                    <td class='number'>6</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=ll&amp;repr=01234675'>
+                        0,1,2,3,4,6,7,5
+                      </a>
+                    </td>
+                    <td class='number'>2352</td>
+                    <td class='number'>2</td>
+                    <td class='number'>6</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=ll&amp;repr=10234657'>
+                        1,0,2,3,4,6,5,7
+                      </a>
+                    </td>
+                    <td class='number'>7056</td>
+                    <td class='number'>2</td>
+                    <td class='number'>6</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=ll&amp;repr=10243675'>
+                        1,0,2,4,3,6,7,5
+                      </a>
+                    </td>
+                    <td class='number'>9408</td>
+                    <td class='number'>3</td>
+                    <td class='number'>6</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=ll&amp;repr=01243675'>
+                        0,1,2,4,3,6,7,5
+                      </a>
+                    </td>
+                    <td class='number'>1344</td>
+                    <td class='number'>3</td>
+                    <td class='number'>6</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=ll&amp;repr=10243657'>
+                        1,0,2,4,3,6,5,7
+                      </a>
+                    </td>
+                    <td class='number'>9408</td>
+                    <td class='number'>3</td>
+                    <td class='number'>6</td>
+                  </tr>
+                </tr>
+              </table>
+              <h4 id='aa3'>AA-equivalence</h4>
+              <table class='table table-striped table-hover table-bordered'>
+                <tr>
+                  <th>Representative</th>
+                  <th>Size</th>
+                  <th>Min</th>
+                  <th>Max</th>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=aa&amp;repr=01234567'>
+                        0,1,2,3,4,5,6,7
+                      </a>
+                    </td>
+                    <td class='number'>1344</td>
+                    <td class='number'>0</td>
+                    <td class='number'>6</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=aa&amp;repr=01234576'>
+                        0,1,2,3,4,5,7,6
+                      </a>
+                    </td>
+                    <td class='number'>9408</td>
+                    <td class='number'>1</td>
+                    <td class='number'>6</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=aa&amp;repr=01234675'>
+                        0,1,2,3,4,6,7,5
+                      </a>
+                    </td>
+                    <td class='number'>18816</td>
+                    <td class='number'>2</td>
+                    <td class='number'>6</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href='revclass_viewer.html?vars=3&amp;cls=aa&amp;repr=01243675'>
+                        0,1,2,4,3,6,7,5
+                      </a>
+                    </td>
+                    <td class='number'>10752</td>
+                    <td class='number'>3</td>
+                    <td class='number'>6</td>
+                  </tr>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

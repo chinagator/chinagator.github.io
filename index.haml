@@ -1,0 +1,82 @@
+!!! 5
+%html
+  %head
+    = Haml::Engine.new(File.read('_header.haml')).render(Object.new, :title => 'Mingsong Chen')
+  %body
+
+    .container#main-container
+      %div.pinfo
+        %br
+        %br
+        .row#main-row
+          .col-md-8
+            -#(class='col-md-offset-2')d
+            .row
+              %div(class='col-md-4')
+                %img#nav-picture(src="images/cms.jpg" )
+              .col-md-8
+                %div(class='row' style="text-align:center" )
+                  %h1(class='white') Mingsong Chen
+                  %div(style="color:white" )
+                    %strong Professor/Vice Director
+                    %div(style="font-style:italic;color:#D7D7D7" )
+                      %div Department of Embedded Software and Systems
+                      %div School of Computer Science and Software Engineering
+                      %div East China Normal University, Shanghai, China
+                %br
+                .row
+                  .col-md-6
+                    %span.glyphicon.glyphicon-phone-alt
+                    +8621 62235116
+                  .col-md-6
+                    %span.glyphicon.glyphicon-envelope
+                    %a(href="mailto: mschen@sei.ecnu.edu.cn") mschen@sei.ecnu.edu.cn
+                .row
+                  .col-md-12
+                    %span.glyphicon.glyphicon-home
+                    Math Build. E214, 3663 Zhongshan North Road, Shanghai, China
+
+            %br
+            .row
+              .col-md-12
+                %p(style="text-align: justify")
+                  Mingsong Chen is a full Professor in the Computer Science and Software Engineering Institute (
+                  %a(href="http://www.sei.ecnu.edu.cn" target="_blank")<> CS&CE
+                  ) at the East China Normal University (
+                  %a(href="http://english.ecnu.edu.cn/" target="_blank")<> ECNU
+                  ). Currently he serves as the vice director of the department of Embedded Software and Systems.
+                  His research interests include design automation and verification of cyber physical systems, cloud/embedded/parallel computing, computer architecture, and IoT Security.
+                  He received his B.S. and M. Eng. from Nanjing University in 2003 and 2006 respectively, and Ph.D. from the University of Florida, in 2010 - all in Computer Science.
+                  He is a senior member of
+                  %a(href="http://www.ccf.org.cn/sites/ccf/" target="_blank") CCF
+                  , and member of both ACM and IEEE.
+                %h3 Call for Papers:
+                %ul.list-group
+                  %li
+                    First Workshop on Advances in IoT Architecture and Systems (
+                    %a(href="http://faculty.ecnu.edu.cn/picture/article/223/cf/92/2c5dd62f4b1fa97ce7a0457030ed/f405f260-6322-4a60-a809-5359ae414556.pdf")<>AIoTAS17-CFP-flyer
+                    ), 2017.
+                  %li
+                    15th Australasian Symposium on Parallel and Distributed Computing (
+                    %a(href="http://www.ozcom.org/auspdc2017/")<>AusPDC 2017
+                    ).
+                %h3 News
+                %ul.list-group
+                  -#= Haml::Engine.new(File.read('_news.haml')).render(Object.new)
+                  %li One paper got accetpted by Journal of Microprocessors and Microsystems.
+                  %li One paper on Uncertain AADL for CBTC got accepted by IEEE TCAD 2017.
+                  %li One survey paper on CBTC got accepted by Journal of Software (软件学报) 2017.
+                  %li Two papers got accepted by DATE 2017.
+                  %li One paper got accepted by IEEE TPDS.
+                  %li Two papers got accepted by Journal of Circuits, Systems and Computers.
+                  %li Prof. Chen received the Outstanding Teaching Award from graduate school of ECNU.
+                  %li One paper got accetpted by IEEE Trans. on Cloud Computing.
+
+        = Haml::Engine.new(File.read('_nav.haml')).render(Object.new, :page => 'index')
+        %br
+        %br
+        <p style="text-align:center"><a title="Visitor Map for faculty.ecnu.edu.cn/s/223/t/1918/main.jspy" href="http://www.clustrmaps.com/map/faculty.ecnu.edu.cn/s/223/t/1918/main.jspy"><img src="//www.clustrmaps.com/map_v2.png?u=sd6U&amp;d=NTb93bY21G78sd9N9ishiRH_iFNHkmM2ukbgEeZjYQU"></a></p>
+        <p style="text-align:center"><a href="http://www.web-stat.com"><img style="border-left-width:0px;border-right-width:0px;border-bottom-width:0px;border-top-width:0px;border-image:none" src="//server2.web-stat.com/6s/3/1041653.gif"></a></p>
+    %script(src="js/jquery.min.js")
+    %script(src="js/jquery.timeago.js")
+    -#%script(src="js/github.js")

@@ -1,0 +1,386 @@
+!!! 5
+%html
+  %head
+    = Haml::Engine.new(File.read('_header.haml')).render(Object.new, :title => 'Mathias Soeken / New CirKit Add-on')
+    %link(href="css/highlight.css" rel="stylesheet")
+    %script(src="js/highlight.pack.js")
+    %script(src="js/cirkit_highlight.js")
+
+    %link(href="css/doc.css" rel="stylesheet")
+  %body
+    .container#main-container
+      .row#main-row
+        = Haml::Engine.new(File.read('_nav.haml')).render(Object.new, :page => "cirkit")
+        .col-md-9.block
+          %h1 Getting started with CirKit development
+          %p
+            This tutorial gives an introduction into the development of CirKit.
+            The easiest way to organize new code is by means of add-ons.
+            We create a new add-on with a custom command that will randomly rewrite an XMG.
+            The API of CirKit is not focus of this tutorial, but rather to understand how to get an entry point into CirKit.
+            (Check the
+            %a(href="https://github.com/msoeken/cirkit/blob/master/src/classical/cli/commands/demo.cpp" target="_blank")
+              %kbd demo
+              command
+            for some demonstration of the API.)
+          %p
+            CirKit provides utility scripts in order to create new add-ons and new files easily.
+            The directory structure for a new add-on can be created by calling from the CirKit root directory
+          %pre
+            :preserve
+              ./utils/make_addon.py random
+          %p
+            Here,
+            %i random
+            is the name of the new add-on.  A new directory called
+            %i cirkit-addon-random
+            is created in the directory
+            %i addons.  We create a file for the implementation of the new function with another script:
+          %pre
+            :preserve
+              ./utils/make_src_file.py classical/functions/xmg_random_rewrite random
+          %p
+            Note, that the first argument is the path to the filename without the
+            %i src/
+            in the beginning and without an extension in the end.  Two files, a header and a source file, are created.
+            The second parameter ensures that the files are created for the correct add-on.
+            The third parameter is optional and can have a name of the file author.
+            If not specified, the name is fetched from the user's git configuration.
+          %p
+            The header file in
+            %i addons/cirkit-addon-random/src/classical/functions/xmg_random_rewrite.hpp
+            contains already some skeleton code and we extend it by a function definition as follows (all comments are omitted in the code):
+          %pre
+            %code.cpp
+              :preserve
+                // xmg_random_rewrite.hpp
+                #ifndef XMG_RANDOM_REWRITE_HPP
+                #define XMG_RANDOM_REWRITE_HPP
+
+                #include &lt;core/properties.hpp&gt;
+                #include &lt;classical/xmg/xmg.hpp&gt;
+
+                namespace cirkit
+                {
+
+                xmg_graph xmg_random_rewrite( const xmg_graph& xmg,
+                                              const properties::ptr& settings = properties::ptr(),
+                                              const properties::ptr& statistics = properties::ptr() );
+
+                }
+
+                #endif
+          %p
+            Note that we include parameters
+            %code settings
+            and
+            %code statistics
+            into the function definition, which are very typical for algorithms in CirKit.
+            The variable
+            %code settings
+            is used to pass optional values from the caller to the algorithm, and the variable
+            %code statistics
+            is used to return statistical information from the algorithm to the caller.
+          %p
+            Next, we add the code to the source file.
+            The complete code is shown at once and then described in the following paragraphs.
+          %pre
+            %code.cpp
+              :preserve
+                // xmg_random_rewrite.cpp
+                #include "xmg_random_rewrite.hpp"
+
+                #include &lt;random&gt;
+
+                #include &lt;core/utils/timer.hpp&gt;
+                #include &lt;classical/xmg/xmg_rewrite.hpp&gt;
+
+                namespace cirkit
+                {
+
+                xmg_graph xmg_random_rewrite( const xmg_graph& xmg,
+                                              const properties::ptr& settings,
+                                              const properties::ptr& statistics )
+                {
+                  // (1) parse settings
+                  const auto seed                = get( settings, "seed",              51966u );
+                  const auto replace_probability = get( settings, "replace_prability", 10u );
+
+                  // (2) write runtime information into statistics
+                  properties_timer t( statistics );
+
+                  // (3) create a roll dice function
+                  const auto dice = [seed, replace_probability]() {
+                    static std::default_random_engine gen( seed );
+                    static std::uniform_int_distribution&lt;unsigned&gt; dist( 0u, 100u );
+
+                    return dist( gen ) &lt;= replace_probability;
+                  };
+
+                  // (4) how to rewrite MAJ and XOR gates
+                  maj_rewrite_func_t on_maj = [&dice]( xmg_graph& xmg_new,
+                                                       const xmg_function& a,
+                                                       const xmg_function& b,
+                                                       const xmg_function& c  ) {
+                    return dice() ? xmg_new.get_constant( false ) : xmg_new.create_maj( a, b, c );
+                  };
+
+                  xor_rewrite_func_t on_xor = [&dice]( xmg_graph& xmg_new,
+                                                       const xmg_function& a,
+                                                       const xmg_function& b  ) {
+                    return dice() ? xmg_new.get_constant( true ) : xmg_new.create_xor( a, b );
+                  };
+
+                  // (5) rewrite the XMG
+                  const auto xmg_tmp = xmg_rewrite_top_down( xmg, on_maj, on_xor );
+
+                  // (6) strash rewritten XMG to remove dangling nodes
+                  return xmg_strash( xmg_tmp );
+                }
+
+                }
+          %ol
+            %li
+              There are two settings:
+              %code seed
+              contains a random seed, and
+              %code replace_probililty
+              is a percentage to control the chance for which a node is replaced by a constant.
+            %li
+              We use the class
+              %code properties_timer
+              from (<i>core/utils/timer.hpp</i>) to store the run-time of the code into the
+              %code statistics
+              variable.
+            %li
+              We create a function
+              %code dice
+              that when being called returns either true with a probability according to <code>replace_probability</code>.
+            %li
+              Two functions
+              %code on_maj
+              and
+              %code on_xor
+              are defined, which are passed to
+              %code xmg_rewrite_top_down
+              and describes how to handle an MAJ gate and a XOR gate, respectively.
+              It behaves as normal, unless the dice returns true; in that case, the node is replaced by a constant.
+            %li
+              The XMG is then rewritten using the function
+              %code xmg_rewrite_top_down
+              using a depth-first search traversal.
+            %li
+              Since the call to
+              %code xmg_rewrite_top_down
+              can lead to dangling nodes in the graph, we clean in up using <code>xmg_strash</code>.
+          %p
+            We can compile the current code by calling
+          %pre
+            :preserve
+              make -C build cirkit_random
+          %p
+            from CirKit's root directory.
+            Next, we add a command called
+            %kbd xmgrandrw
+            that allows us to call the code from CirKit's command line interface.
+            For that, we generate another header and source file using the utility script:
+          %pre
+            :preserve
+              ./utils/make_src_file.py classical/cli/commands/xmgrandrw random
+          %p
+            We add the following code to the header file:
+          %pre
+            %code.cpp
+              :preserve
+                // xmgrandrw.hpp
+                #ifndef CLI_XMGRANDRW_COMMAND_HPP
+                #define CLI_XMGRANDRW_COMMAND_HPP
+
+                #include <classical/cli/xmg_command.hpp>
+
+                namespace cirkit
+                {
+
+                class xmgrandrw_command : public xmg_base_command
+                {
+                public:
+                  xmgrandrw_command( const environment::ptr& env );
+
+                  bool execute();
+
+                private:
+                  unsigned seed                = 51966u;
+                  unsigned replace_probability = 10u;
+                };
+
+                }
+
+                #endif
+          %p
+            We define a command with a special base class
+            %code xmg_base_command
+            , which is designed for commands that expect an XMG as input.
+            It is important that the class name is
+            %code xmgrandrw_command
+            to be used in later code that makes use of macros.
+            Two methods need to be implemented, the constructor that will set up the arguments which can be passed to the command, and
+            %code execute
+            which executes the code and calls our algorithm.
+            More details on how to write commands can be found in the
+            %a(href="https://github.com/msoeken/cirkit/blob/master/programs/core/abc_cli.cpp" target="_blank") abc_cli
+            example program.
+          %p
+            Next we implement both these methods in the source file:
+          %pre
+            %code.cpp
+              :preserve
+                // xmgrandrw.cpp
+                #include "xmgrandrw.hpp"
+
+                #include &lt;core/utils/program_options.hpp&gt;
+                #include &lt;classical/functions/xmg_random_rewrite.hpp&gt;
+
+                namespace cirkit
+                {
+
+                xmgrandrw_command::xmgrandrw_command( const environment::ptr& env )
+                  : xmg_base_command( env, "Rewrite XMGs randomly" )
+                {
+                  opts.add_options()
+                    ( "seed,s",                value_with_default( &seed ),                "random seed" )
+                    ( "replace_probability,p", value_with_default( &replace_probability ), "replace probability (value from 0 to 100)" )
+                    ;
+                }
+
+                bool xmgrandrw_command::execute()
+                {
+                  const auto settings = make_settings();
+                  settings-&gt;set( "seed", seed );
+                  settings-&gt;set( "replace_prabibility", replace_probability );
+
+                  xmg() = xmg_random_rewrite( xmg(), settings, statistics );
+
+                  print_runtime();
+
+                  return true;
+                }
+
+                }
+          %p
+            The constructor sets up two program options
+            %kbd --seed
+            (which can be abbreviated <kbd>-s</kbd>) and
+            %kbd --replace_probability
+            (which can be abbreviated <kbd>-p</kbd>).
+            In the function
+            %code execute
+            the values of the options are fed into a
+            %code settings
+            variable and the algorithm is called.  Note that there is a
+            %code statistics
+            variable, ready to use.
+            A utility function is used to print the runtime from the
+            %code statistics
+            variable.
+            The function should always return <code>true</code>.
+          %p
+            We are almost done.  Next, we create a last file in which we register the commands and pass them to CirKit.
+            First create header and source files with
+          %pre
+            :preserve
+              ./utils/make_src_file.py classical/cli/commands/random_commands random
+          %p
+            And then delete the source file with (also refresh the build directory).
+            This step is optional, but we do not need the source file.
+          %pre
+            :preserve
+              rm addons/cirkit-addon-random/src/classical/cli/commands/random_commands.cpp
+              cmake build
+          %p
+            The header file looks as follows, and it is very important to keep the naming convention.
+          %pre
+            %code.cpp
+              :preserve
+                // random_commands.hpp
+                #ifndef RANDOM_COMMANDS_HPP
+                #define RANDOM_COMMANDS_HPP
+
+                #include &lt;classical/cli/commands/xmgrandrw.hpp&gt;
+
+                namespace cirkit
+                {
+
+                #define CIRKIT_RANDOM_COMMANDS     \
+                  cli.set_category( "Rewriting" ); \
+                  ADD_COMMAND( xmgrandrw );
+
+                }
+
+                #endif
+          %p
+            The macro name must be
+            %code CIRKIT_
+            followed by the addon name in upper case letters, followed by <code>_COMMANDS</code>.
+          %p
+            Finally, we need to tell the build system, that the addon has commands by adding the following two lines into the file
+            %i addons/cirkit-addon-random/CMakeLists.txt:
+          %pre
+            :preserve
+              add_cirkit_library(
+                NAME cirkit_random
+                AUTO_DIRS src
+                USE
+                  cirkit_classical
+                INCLUDE
+                  PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src
+                DEFINE
+                  PUBLIC ADDON_RANDOM
+                <b>COMMANDS
+                  classical/cli/commands/random_commands.hpp</b>
+              )
+          %p
+            That's it.  We rebuild CirKit with
+          %pre
+            :preserve
+              make -C build cirkit
+          %p
+            and then call it to try out the new command:
+          %pre
+            %code.cirkit
+              :preserve
+                cirkit> tt --maj 11
+                cirkit> tt > aig
+                cirkit> aig > xmg
+                cirkit> ps -x
+                [i]                   ex: i/o =      11 /       1  maj =     230  xor =       0  lev =   15
+                cirkit> xmgrandrw
+                [i] run-time: 0.00 secs
+                cirkit> ps -x
+                [i]                   ex: i/o =      11 /       1  maj =      72  xor =       0  lev =   14
+          %p
+            The complete code for this add-on can be found at
+            %a(href="https://github.com/msoeken/cirkit_addon_random" target="_blank") this repository.
+          %h4 Exercises
+          %p
+            Here are some suggestions for exercises (with a difficulty estimation from 0&ndash;50) to extend the add-on.
+          %ol
+            %li
+              [15] Add a validity checker to
+              %code xmgrandrw_command
+              to ensure a valid value for <code>replace_probability</code>.
+            %li
+              [15] Write a
+              %code log
+              function for
+              %code xmgrandrw_command
+              that logs the values of both parameters and the runtime.
+            %li
+              [25] Change the initial value of the seed variable to be based on the current time.
+            %li
+              [35] Add a new command
+              %kbd xmgrand
+              that creates a random XMG.
+            %li
+              [40] Make the probability distribution depend on the size of the node's cone.  That is, if a node has a large cone, then it should be less likely to be replaced by a constant.
+              
+        

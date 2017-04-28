@@ -1,0 +1,15 @@
+%h4(id="#{cls}#{vars}")= title
+%table.table.table-striped.table-hover.table-bordered
+  %tr
+    %th Representative
+    %th Size
+    %th Min
+    %th Max
+    - JSON.parse( File.read( 'json/revclass.json' ) )["#{vars}"][cls].sort { |a,b| a["id"].to_i <=> b["id"].to_i }.each do |a|
+      %tr
+        %td
+          %a(href="revclass_viewer.html?vars=#{vars}&cls=#{cls}&repr=#{a["repr"]}")
+            = a["repr"].scan( /./ ).join ("," )
+        %td.number= a["size"]
+        %td.number= a["min"]
+        %td.number= a["max"]

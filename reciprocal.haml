@@ -1,0 +1,1091 @@
+!!! 5
+- require 'json'
+%html
+  %head
+    = Haml::Engine.new(File.read('_header.haml')).render(Object.new, :title => 'Mathias Soeken / Reversible reciprocal circuits')
+    %link(href="css/doc.css" rel="stylesheet")
+  %body
+    .container#main-container
+      .row#main-row
+        = Haml::Engine.new(File.read('_nav.haml')).render(Object.new, :page => "revkit")
+        .col-md-9
+          %h1 Reversible reciprocal circuits
+          %p
+            This page lists the benchmarks for the reversible reciprocal circuits reported in
+          %p
+            Mathias Soeken, Martin Roetteler, Nathan Wiebe, and Giovanni De Micheli:
+            %a(href="publications.html#c81") Design automation and design space exploration for quantum computers,
+            %i Design Automation and Test in Europe,
+            2017.
+          %h3 Results with Symbolic Functional Reversible Synthesis
+          %table.table.table.table-bordered(width="100%")
+            %thead
+              %tr.active
+                %th
+                %th(colspan="3" style="text-align:center")
+                  %tt INTDIV
+                  (
+                  %i n
+                  )
+                %th(colspan="3" style="text-align:center")
+                  %tt NEWTON
+                  (
+                  %i n
+                  )
+              %tr
+                %th
+                  %i n
+                %th qubits
+                %th
+                  %i T
+                  count
+                %th files
+                %th qubits
+                %th
+                  %i T
+                  count
+                %th files
+            %tbody
+              %tr.data
+                %td.number 4
+                %td.number 7
+                %td.number 597
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec4.v.gz") Verilog
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec4.pla.gz") PLA
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec4.real.gz") REAL
+                %td.number 7
+                %td.number 589
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec4.v.gz") Verilog
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec4.pla.gz") PLA
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec4.real.gz") REAL
+              %tr.data
+                %td.number 5
+                %td.number 9
+                %td.number 1613
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec5.v.gz") Verilog
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec5.pla.gz") PLA
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec5.real.gz") REAL
+                %td.number 9
+                %td.number 1848
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec5.v.gz") Verilog
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec5.pla.gz") PLA
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec5.real.gz") REAL
+              %tr.data
+                %td.number 6
+                %td.number 11
+                %td.number 5963
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec6.v.gz") Verilog
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec6.pla.gz") PLA
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec6.real.gz") REAL
+                %td.number 11
+                %td.number 6419
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec6.v.gz") Verilog
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec6.pla.gz") PLA
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec6.real.gz") REAL
+              %tr.data
+                %td.number 7
+                %td.number 13
+                %td.number 20008
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec7.v.gz") Verilog
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec7.pla.gz") PLA
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec7.real.gz") REAL
+                %td.number 13
+                %td.number 17867
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec7.v.gz") Verilog
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec7.pla.gz") PLA
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec7.real.gz") REAL
+              %tr.data
+                %td.number 8
+                %td.number 15
+                %td.number 51386
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec8.v.gz") Verilog
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec8.pla.gz") PLA
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec8.real.gz") REAL
+                %td.number 15
+                %td.number 56379
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec8.v.gz") Verilog
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec8.pla.gz") PLA
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec8.real.gz") REAL
+              %tr.data
+                %td.number 9
+                %td.number 17
+                %td.number 142901
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec9.v.gz") Verilog
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec9.pla.gz") PLA
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec9.real.gz") REAL
+                %td.number 17
+                %td.number 148913
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec9.v.gz") Verilog
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec9.pla.gz") PLA
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec9.real.gz") REAL
+              %tr.data
+                %td.number 10
+                %td.number 19
+                %td.number 380009
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec10.v.gz") Verilog
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec10.pla.gz") PLA
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec10.real.gz") REAL
+                %td.number 19
+                %td.number 383891
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec10.v.gz") Verilog
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec10.pla.gz") PLA
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec10.real.gz") REAL
+              %tr.data
+                %td.number 11
+                %td.number 21
+                %td.number 946724
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec11.v.gz") Verilog
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec11.pla.gz") PLA
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec11.real.gz") REAL
+                %td.number 21
+                %td.number 945117
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec11.v.gz") Verilog
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec11.pla.gz") PLA
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec11.real.gz") REAL
+              %tr.data
+                %td.number 12
+                %td.number 23
+                %td.number 2318841
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec12.v.gz") Verilog
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec12.pla.gz") PLA
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec12.real.gz") REAL
+                %td.number 23
+                %td.number 2346319
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec12.v.gz") Verilog
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec12.pla.gz") PLA
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec12.real.gz") REAL
+              %tr.data
+                %td.number 13
+                %td.number 25
+                %td.number 5599538
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec13.v.gz") Verilog
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec13.pla.gz") PLA
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec13.real.gz") REAL
+                %td.number 25
+                %td.number 5645530
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec13.v.gz") Verilog
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec13.pla.gz") PLA
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec13.real.gz") REAL
+              %tr.data
+                %td.number 14
+                %td.number 27
+                %td.number 13148102
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec14.v.gz") Verilog
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec14.pla.gz") PLA
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec14.real.gz") REAL
+                %td.number 27
+                %td.number 13186076
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec14.v.gz") Verilog
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec14.pla.gz") PLA
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec14.real.gz") REAL
+              %tr.data
+                %td.number 15
+                %td.number 29
+                %td.number 30761399
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec15.v.gz") Verilog
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec15.pla.gz") PLA
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec15.real.gz") REAL
+                %td.number 29
+                %td.number 30746528
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec15.v.gz") Verilog
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec15.pla.gz") PLA
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec15.real.gz") REAL
+              %tr.data
+                %td.number 16
+                %td.number 31
+                %td.number 71155258
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec16.v.gz") Verilog
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec16.pla.gz") PLA
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-pla-rec16.real.gz") REAL
+                %td.number 31
+                %td.number 71259272
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec16.v.gz") Verilog
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec16.pla.gz") PLA
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-pla-rec16.real.gz") REAL
+          %p
+            The PLA files have been generated using the
+            %a(href="https://people.eecs.berkeley.edu/~alanmi/abc/" target="_blank") ABC
+            commands
+            %kbd clp
+            and
+            %kbd satclp
+            :plain
+              .
+            The
+            %tt NEWTON
+            designs have been parsed using
+            %a(href="http://www.clifford.at/yosys/" target="_blank") Yosys
+            and translated into BLIF files to be read with ABC.  We used the command
+            %kbd stbs -s
+            in
+            %a(href="revkit.html") RevKit
+            to generate reversible circuit realizations (REAL files).
+            The command
+            %kbd gen_reciprocal
+            (see details
+            %a(href="https://github.com/msoeken/cirkit/blob/master/addons/cirkit-addon-reversible/src/reversible/generators/reciprocal.cpp" target="_blank") here
+            )
+            in RevKit can be used to execute the whole flow (requires to have
+            %code abc
+            and
+            %code yosys
+            executables in the
+            %code $PATH
+            ):
+          %pre
+            :preserve
+              <span style="color: darkred"># <b>[N]</b> is a placeholder for the bitwidth</span>
+              <span style="color: darkred"># INTDIV design (-a 0)</span>
+              gen_reciprocal -a 0 -m 1 --verilog_name rec<b>[N]</b>.v --pla_name rec<b>[N]</b>.pla <b>[N]</b>
+              ps -c
+              write_real rec<b>[N]</b>.real
+
+              <span style="color: darkred"># NEWTON design (-a 1)</span>
+              gen_reciprocal -a 1 -m 1 --verilog_name rec<b>[N]</b>.v --pla_name rec<b>[N]</b>.pla <b>[N]</b>
+              ps -c
+              write_real rec<b>[N]</b>.real
+          %h3 Results with REVS
+          %p
+            %span.label.label-info Info
+            The Verilog (V) and ESOP (E) files are the same for the flows with
+            %i p = 0
+            and
+            %i p = 1
+          %table.table.table.table-bordered(width="100%")
+            %thead
+              %tr.active
+                %th
+                %th(colspan="3" style="text-align:center")
+                  %tt INTDIV
+                  (
+                  %i n
+                  ),
+                  %i p = 0
+                %th(colspan="3" style="text-align:center")
+                  %tt NEWTON
+                  (
+                  %i n
+                  ),
+                  %i p = 0
+                %th(colspan="3" style="text-align:center")
+                  %tt INTDIV
+                  (
+                  %i n
+                  ),
+                  %i p = 1
+                %th(colspan="3" style="text-align:center")
+                  %tt NEWTON
+                  (
+                  %i n
+                  ),
+                  %i p = 1
+              %tr
+                %th
+                  %i n
+                %th qubits
+                %th
+                  %i T
+                  count
+                %th files
+                %th qubits
+                %th
+                  %i T
+                  count
+                %th files
+                %th qubits
+                %th
+                  %i T
+                  count
+                %th files
+                %th qubits
+                %th
+                  %i T
+                  count
+                %th files
+            %tbody
+              %tr.data
+                %td.number 5
+                %td.number 10
+                %td.number 232
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec5.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec5.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop0-rec5.real.gz") R
+                %td.number 10
+                %td.number 135
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec5.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec5.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop0-rec5.real.gz") R
+                %td.number 12
+                %td.number 241
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop1-rec5.real.gz") R
+                %td.number 10
+                %td.number 135
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop1-rec5.real.gz") R
+              %tr.data
+                %td.number 6
+                %td.number 12
+                %td.number 423
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec6.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec6.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop0-rec6.real.gz") R
+                %td.number 12
+                %td.number 294
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec6.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec6.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop0-rec6.real.gz") R
+                %td.number 14
+                %td.number 411
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop1-rec6.real.gz") R
+                %td.number 13
+                %td.number 268
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop1-rec6.real.gz") R
+              %tr.data
+                %td.number 7
+                %td.number 14
+                %td.number 791
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec7.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec7.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop0-rec7.real.gz") R
+                %td.number 14
+                %td.number 568
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec7.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec7.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop0-rec7.real.gz") R
+                %td.number 17
+                %td.number 803
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop1-rec7.real.gz") R
+                %td.number 17
+                %td.number 511
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop1-rec7.real.gz") R
+              %tr.data
+                %td.number 8
+                %td.number 16
+                %td.number 1342
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec8.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec8.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop0-rec8.real.gz") R
+                %td.number 16
+                %td.number 1039
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec8.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec8.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop0-rec8.real.gz") R
+                %td.number 20
+                %td.number 1349
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop1-rec8.real.gz") R
+                %td.number 20
+                %td.number 1060
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop1-rec8.real.gz") R
+              %tr.data
+                %td.number 9
+                %td.number 18
+                %td.number 2056
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec9.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec9.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop0-rec9.real.gz") R
+                %td.number 18
+                %td.number 1894
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec9.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec9.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop0-rec9.real.gz") R
+                %td.number 23
+                %td.number 2359
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop1-rec9.real.gz") R
+                %td.number 22
+                %td.number 1850
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop1-rec9.real.gz") R
+              %tr.data
+                %td.number 10
+                %td.number 20
+                %td.number 3415
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec10.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec10.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop0-rec10.real.gz") R
+                %td.number 20
+                %td.number 3311
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec10.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec10.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop0-rec10.real.gz") R
+                %td.number 23
+                %td.number 3238
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop1-rec10.real.gz") R
+                %td.number 24
+                %td.number 3071
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop1-rec10.real.gz") R
+              %tr.data
+                %td.number 11
+                %td.number 22
+                %td.number 5631
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec11.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec11.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop0-rec11.real.gz") R
+                %td.number 22
+                %td.number 5303
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec11.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec11.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop0-rec11.real.gz") R
+                %td.number 29
+                %td.number 5244
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop1-rec11.real.gz") R
+                %td.number 27
+                %td.number 4846
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop1-rec11.real.gz") R
+              %tr.data
+                %td.number 12
+                %td.number 24
+                %td.number 8431
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec12.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec12.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop0-rec12.real.gz") R
+                %td.number 24
+                %td.number 8423
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec12.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec12.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop0-rec12.real.gz") R
+                %td.number 30
+                %td.number 7700
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop1-rec12.real.gz") R
+                %td.number 29
+                %td.number 7136
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop1-rec12.real.gz") R
+              %tr.data
+                %td.number 13
+                %td.number 26
+                %td.number 13414
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec13.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec13.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop0-rec13.real.gz") R
+                %td.number 26
+                %td.number 14287
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec13.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec13.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop0-rec13.real.gz") R
+                %td.number 31
+                %td.number 11474
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop1-rec13.real.gz") R
+                %td.number 32
+                %td.number 11988
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop1-rec13.real.gz") R
+              %tr.data
+                %td.number 14
+                %td.number 28
+                %td.number 21902
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec14.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec14.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop0-rec14.real.gz") R
+                %td.number 28
+                %td.number 21782
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec14.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec14.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop0-rec14.real.gz") R
+                %td.number 37
+                %td.number 19063
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop1-rec14.real.gz") R
+                %td.number 34
+                %td.number 19186
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop1-rec14.real.gz") R
+              %tr.data
+                %td.number 15
+                %td.number 30
+                %td.number 33502
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec15.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec15.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop0-rec15.real.gz") R
+                %td.number 30
+                %td.number 34815
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec15.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec15.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop0-rec15.real.gz") R
+                %td.number 35
+                %td.number 27897
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop1-rec15.real.gz") R
+                %td.number 37
+                %td.number 28635
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop1-rec15.real.gz") R
+              %tr.data
+                %td.number 16
+                %td.number 32
+                %td.number 52376
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec16.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec16.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop0-rec16.real.gz") R
+                %td.number 32
+                %td.number 50784
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec16.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec16.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop0-rec16.real.gz") R
+                %td.number 46
+                %td.number 42717
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop1-rec16.real.gz") R
+                %td.number 38
+                %td.number 41532
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop1-rec16.real.gz") R
+              %tr.data
+                %td.number 17
+                %td.number 34
+                %td.number 78470
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec17.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec17.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop0-rec17.real.gz") R
+                %td.number 34
+                %td.number 95462
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec17.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec17.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop0-rec17.real.gz") R
+                %td.number 41
+                %td.number 64089
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop1-rec17.real.gz") R
+                %td.number 43
+                %td.number 76022
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop1-rec17.real.gz") R
+              %tr.data
+                %td.number 18
+                %td.number 36
+                %td.number 119510
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec18.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec18.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop0-rec18.real.gz") R
+                %td.number 36
+                %td.number 153414
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec18.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec18.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop0-rec18.real.gz") R
+                %td.number 43
+                %td.number 94577
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop1-rec18.real.gz") R
+                %td.number 44
+                %td.number 119657
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop1-rec18.real.gz") R
+              %tr.data
+                %td.number 19
+                %td.number 38
+                %td.number 179095
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec19.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec19.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop0-rec19.real.gz") R
+                %td.number 38
+                %td.number 229768
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec19.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec19.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop0-rec19.real.gz") R
+                %td.number 46
+                %td.number 138912
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop1-rec19.real.gz") R
+                %td.number 46
+                %td.number 175598
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop1-rec19.real.gz") R
+              %tr.data
+                %td.number 20
+                %td.number 40
+                %td.number 284118
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec20.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec20.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop0-rec20.real.gz") R
+                %td.number 40
+                %td.number 349398
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec20.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec20.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop0-rec20.real.gz") R
+                %td.number 48
+                %td.number 218341
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop1-rec20.real.gz") R
+                %td.number 47
+                %td.number 263106
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop1-rec20.real.gz") R
+              %tr.data
+                %td.number 21
+                %td.number 42
+                %td.number 422806
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec21.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec21.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop0-rec21.real.gz") R
+                %td.number 42
+                %td.number 552496
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec21.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec21.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop0-rec21.real.gz") R
+                %td.number 51
+                %td.number 318627
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop1-rec21.real.gz") R
+                %td.number 51
+                %td.number 412488
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop1-rec21.real.gz") R
+              %tr.data
+                %td.number 22
+                %td.number 44
+                %td.number 640351
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec22.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec22.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop0-rec22.real.gz") R
+                %td.number 44
+                %td.number 837646
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec22.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec22.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop0-rec22.real.gz") R
+                %td.number 52
+                %td.number 476603
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop1-rec22.real.gz") R
+                %td.number 53
+                %td.number 616065
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop1-rec22.real.gz") R
+              %tr.data
+                %td.number 23
+                %td.number 46
+                %td.number 941408
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec23.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec23.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop0-rec23.real.gz") R
+                %td.number 46
+                %td.number 1249894
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec23.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec23.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop0-rec23.real.gz") R
+                %td.number 56
+                %td.number 684166
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop1-rec23.real.gz") R
+                %td.number 56
+                %td.number 909364
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop1-rec23.real.gz") R
+              %tr.data
+                %td.number 24
+                %td.number 48
+                %td.number 1417327
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec24.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec24.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop0-rec24.real.gz") R
+                %td.number 48
+                %td.number 1885742
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec24.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec24.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop0-rec24.real.gz") R
+                %td.number 57
+                %td.number 1021041
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop1-rec24.real.gz") R
+                %td.number 58
+                %td.number 1344400
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop1-rec24.real.gz") R
+              %tr.data
+                %td.number 25
+                %td.number 50
+                %td.number 2119663
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec25.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop-rec25.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop0-rec25.real.gz") R
+                %td.number 50
+                %td.number 2819902
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec25.v.gz") V
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop-rec25.esop.gz") E
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop0-rec25.real.gz") R
+                %td.number 60
+                %td.number 1512893
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-esop1-rec25.real.gz") R
+                %td.number 60
+                %td.number 1985367
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/newton-esop1-rec25.real.gz") R
+          %p
+            The following command in RevKit can be used to execute the whole flow (the flow requires to have
+            %code abc
+            and
+            %code yosys
+            executables in the
+            %code $https://documents.epfl.ch/users/s/so/soeken/www/reciprocals
+            ):
+          %pre
+            :preserve
+              <span style="color: darkred"># <b>[N]</b> is a placeholder for the bitwidth</span>
+              <span style="color: darkred"># INTDIV design (-a 0)</span>
+              gen_reciprocal -a 0 -m 0 --verilog_name rec<b>[N]</b>.v --pla_name rec<b>[N]</b>.pla <b>[N]</b>
+              ps -c
+              write_real rec<b>[N]</b>.real
+
+              <span style="color: darkred"># NEWTON design (-a 1)</span>
+              gen_reciprocal -a 1 -m 0 --verilog_name rec<b>[N]</b>.v --pla_name rec<b>[N]</b>.pla <b>[N]</b>
+              ps -c
+              write_real rec<b>[N]</b>.real
+          %h3 Results with Hierarchical Synthesis
+          %table.table.table.table-bordered(width="100%")
+            %thead
+              %tr.active
+                %th
+                %th(colspan="3" style="text-align:center")
+                  %tt INTDIV
+                  (
+                  %i n
+                  )
+                %th(colspan="3" style="text-align:center")
+                  %tt NEWTON
+                  (
+                  %i n
+                  )
+              %tr
+                %th
+                  %i n
+                %th qubits
+                %th
+                  %i T
+                  count
+                %th files
+                %th qubits
+                %th
+                  %i T
+                  count
+                %th files
+            %tbody
+              %tr
+                %td.number 16
+                %td.number 892
+                %td.number 5607
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-dxs-rec16.v.gz") Verilog
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-dxs-rec16.xmg.v.gz") XMG
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-dxs-rec16.real.gz") REAL
+                %td.number 10713
+                %td.number 73080
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-dxs-rec16.v.gz") Verilog
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-dxs-rec16.xmg.v.gz") XMG
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-dxs-rec16.real.gz") REAL
+              %tr
+                %td.number 32
+                %td.number 3501
+                %td.number 21455
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-dxs-rec32.v.gz") Verilog
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-dxs-rec32.xmg.v.gz") XMG
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-dxs-rec32.real.gz") REAL
+                %td.number 56207
+                %td.number 392917
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-dxs-rec32.v.gz") Verilog
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-dxs-rec32.xmg.v.gz") XMG
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-dxs-rec32.real.gz") REAL
+              %tr
+                %td.number 64
+                %td.number 13465
+                %td.number 80339
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-dxs-rec64.v.gz") Verilog
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-dxs-rec64.xmg.v.gz") XMG
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-dxs-rec64.real.gz") REAL
+                %td.number 178653
+                %td.number 1264704
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-dxs-rec64.v.gz") Verilog
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-dxs-rec64.xmg.v.gz") XMG
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-dxs-rec64.real.gz") REAL
+              %tr
+                %td.number 128
+                %td.number 51897
+                %td.number 308364
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-dxs-rec128.v.gz") Verilog
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-dxs-rec128.xmg.v.gz") XMG
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-dxs-rec128.real.gz") REAL
+                %td.number 1029441
+                %td.number 7033040
+                %td
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-dxs-rec128.v.gz") Verilog
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-dxs-rec128.xmg.v.gz") XMG
+                  &middot;
+                  %a(href="https://documents.epfl.ch/users/s/so/soeken/www/reciprocals/intdiv-dxs-rec128.real.gz") REAL
+          %p
+            The following script that involves calls to RevKit, ABC and
+            %a(href="cirkit.html") CirKit
+            has been used to generate the circuits.  Here, we show the scripts to generate the
+            %tt INTDIV
+            design.  Change
+            %kbd -a 0
+            in the
+            %kbd gen_reciprocal
+            command to
+            %kbd -a 1
+            to use the
+            %tt NEWTON
+            design.
+          %pre
+            :preserve
+              <span style="color: darkred"># <b>[N]</b> is a placeholder for the bitwidth</span>
+              <span style="color: darkred"># RevKit</span>
+              gen_reciprocal -a 0 --verilog_name rec<b>[N]</b> --only_write <b>[N]</b>
+              quit
+
+              <span style="color: darkred"># Use ABC <i>resyn2</i> iteratively (until no more improvement) to translate Verilog into AIG rec<b>[N]</b>.aig</span>
+              %read rec<b>[N]</b>.v
+              %blast
+              &put
+              resyn2; print_stats
+              resyn2; print_stats
+              ...
+              write rec<b>[N]</b>.aig
+
+              <span style="color: darkred"># CirKit</span>
+              read_aiger rec<b>[N]</b>.aig
+              xmglut -k 4
+              write_verilog -x rec<b>[N]</b>.xmg.v
+              quit
+
+              <span style="color: darkred"># RevKit</span>
+              read_verilog -x rec<b>[N]</b>.xmg.v
+              dxs
+              ps -c
+              write_real rec<b>[N]</b>.real

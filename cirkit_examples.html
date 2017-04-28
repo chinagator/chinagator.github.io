@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1' name='viewport'>
+    <title>Mathias Soeken / CirKit Showcase</title>
+    <link href='css/bootstrap.min.css' rel='stylesheet'>
+    <link href='css/custom.css' rel='stylesheet'>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-70660599-1', 'auto');
+      ga('send', 'pageview', location.pathname);
+    </script>
+    <link href='css/highlight.css' rel='stylesheet'>
+    <script src='js/highlight.js'></script>
+    <script src='js/cirkit_highlight.js'></script>
+    <link href='css/doc.css' rel='stylesheet'>
+  </head>
+  <body>
+    <div class='container' id='main-container'>
+      <div class='row' id='main-row'>
+        <div id='navibar'>
+          <div class='row'>
+            <div class='col-md-2'>
+              <a href='index.html'>About me</a>
+              <div>
+                |
+              </div>
+            </div>
+            <div class='col-md-2'>
+              <a href='publications.html'>Publications</a>
+              <div>
+                |
+              </div>
+            </div>
+            <div class='col-md-2'>
+              <a href='project.html'>Projects</a>
+              <div>
+                |
+              </div>
+            </div>
+            <div class='col-md-2'>
+              <a href='teaching.html'>Teaching</a>
+              <div>
+                |
+              </div>
+            </div>
+            <div class='col-md-2'>
+              <a href='research.html'>Services</a>
+              <div>
+                |
+              </div>
+            </div>
+            <div class='col-md-2'>
+              <a href='talks.html'>Students</a>
+            </div>
+          </div>
+        </div>
+        <div class='col-md-9 block'>
+          <h1>CirKit Showcase</h1>
+          <p>
+            This page lists some usage examples of CirKit to demonstrate its possibiilities.
+          </p>
+          <h3>
+            Tweaking
+            <kbd>show</kbd>
+            for Mac
+          </h3>
+          <p>
+            The command
+            <kbd>show</kbd>
+            defaults to
+            <code>xdg-open</code>
+            as program to open the generated GraphViz files.  Mac lacks both this program and a good viewer for GraphViz files.
+            A workaround is to create a PNG file with
+            <code>dot</code>
+            and then open the PNG file instead.  There are several ways to do this, but the most convenient is to set the CirKit variable
+            <code>show_dotcmd</code>
+            using
+            <kbd>set</kbd>
+            .
+            A good place to set this variable is in the
+            <code>alias</code>
+            file such that it is loaded on start up (if you use the alias file, remember to set the
+            <code>CIRKIT_HOME</code>
+            environment variable to the CirKit directory).
+            We add the following line to the
+            <code>alias</code>
+            file:
+          </p>
+          <pre>set show_dotcmd "dot -Tpng %s > /tmp/test.png; open /tmp/test.png"</pre>
+          <p>
+            Now in a program as the following, a PNG file is created and opened in a
+            <code>Preview</code>
+            window.
+          </p>
+          <pre><code class='cirkit'>cirkit> expr <[a!b]bc>&#x000A;cirkit> expr > xmg&#x000A;cirkit> show -x</code></pre>
+          <p>
+            If you happen to use
+            <code>iTerm2</code>
+            together with the
+            <code>imgcat</code>
+            extension, you can use it to directly display the PNG file in the terminal. Just use the following as
+            <code>dotcmd</code>
+          </p>
+          <pre>set show_dotcmd "dot -Tpng %s > /tmp/test.png; imgcat /tmp/test.png"</pre>
+        </div>
+      </div>
+    </div>
+    <script src='js/jquery.min.js'></script>
+    <script src='js/cirkit_doc.js'></script>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+!!! 5
+%html
+  %head
+    = Haml::Engine.new(File.read('_header.haml')).render(Object.new, :title => 'Mathias Soeken / RevKit')
+    %link(href="css/doc.css" rel="stylesheet")
+  %body
+    .container#main-container
+      .row#main-row
+        = Haml::Engine.new(File.read('_nav.haml')).render(Object.new, :page => "revkit")
+        .col-md-9
+          %a(href="https://github.com/msoeken/cirkit" target="_blank")
+            %img(style="position: absolute; top: 0; right: 0; border: 0" src="images/ribbon.png" alt="Fork me on GitHub")
+          %h1 RevKit
+          %p(style="width:95%")
+            RevKit is an open source C++ logic synthesis framework for reversibe logic.
+            Many
+            %a(href="https://github.com/msoeken/cirkit/tree/master/addons/cirkit-addon-reversible/src/reversible/synthesis" target="_blank") synthesis
+            and
+            %a(href="https://github.com/msoeken/cirkit/tree/master/addons/cirkit-addon-reversible/src/reversible/optimization" target="_blank") optimization
+            algorithms for reversible logic have been implemented or re-implemented in RevKit.
+            Being part of
+            %a(href="cirkit.html") CirKit
+            it now has a command line interface similar to SIS or ABC.
+            The main underlying logic data structures are
+            %a(href="https://github.com/msoeken/cirkit/blob/master/addons/cirkit-addon-reversible/src/reversible/circuit.hpp" target="_blank") reversible circuits,
+            %a(href="https://github.com/msoeken/cirkit/blob/master/addons/cirkit-addon-reversible/src/reversible/truth_table.hpp" target="_blank") truth tables,
+            and
+            %a(href="https://github.com/msoeken/cirkit/blob/master/addons/cirkit-addon-reversible/src/reversible/rcbdd.hpp" target="_blank") RCBDDs.
+          %h3 Download RevKit
+          %p
+            The newest RevKit version is availabe as an addon for
+            %a(href="cirkit.html") CirKit
+            and can be downloaded from
+            %a(href="http://github.com/msoeken/cirkit" target="_blank") github.com/msoeken/cirkit.
+          %p
+            Previous versions of RevKit can be downloaded from
+            %a(href="http://www.revkit.org/" target="_blank") www.revkit.org.
+            The older versions also contain a Python interface and a graphical user interface.
+            These features are no longer maintained and are replaced by the command line interface.
+          %h3 Install RevKit
+          %pre
+            :preserve
+              git clone https://github.com/msoeken/cirkit.git
+              cd cirkit
+              mkdir build
+              cd build
+              cmake -Denable_cirkit-addon-reversible=ON -Denable_cirkit-addon-formal=ON ..
+              make external
+              make revkit
+              cd ..
+          %h3 Run RevKit
+          After a successful compilation, run
+          %pre
+            :preserve
+              ./build/programs/revkit
+          from the main directory.
+          The core concepts of the CirKit CLI also apply to RevKit.
+          Some example scripts for RevKit can be found
+          %a(href="https://github.com/msoeken/cirkit/blob/master/addons/cirkit-addon-reversible/demo.cs" target="_blank") here.
+          The script can also be run with
+          %pre
+            :preserve
+              ./build/programs/revkit -ef addons/cirkit-addon-reversible/demo.cs
+          from the main directory.
+          %h3 Documentation
+          Information on how to use CirKit can be found
+          %a(href="cirkit_doc.html") here.
+          %h3 Requirements
+          %ul
+            %li Linux or Mac
+            %li git
+            %li cmake (at least version 3.0.0)
+            %li g++ (at least version 4.9.0) or clang++ (at least version 3.5.0)
+            %li boost (at least version 1.56.0)
+            %li GNU MP, and its C++ interface GMP++
+            %li GNU readline (optional)
+

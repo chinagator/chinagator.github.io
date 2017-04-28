@@ -1,0 +1,17 @@
+!!! 5
+%html
+  %head
+    = Haml::Engine.new(File.read('_header.haml')).render(Object.new, :title => 'Mathias Soeken / Benchmarks')
+    %link(href="css/doc.css" rel="stylesheet")
+  %body
+    .container#main-container
+      .row#main-row
+        = Haml::Engine.new(File.read('_nav.haml')).render(Object.new, :page => "revkit")
+        .col-md-9
+          %h1 Benchmarks
+          %ul
+            %li
+              %a(href="reciprocal.html") Reversible implementations of the reciprocal function
+            %li
+              %a(href="revclass.html") Exhaustive classification of reversible functions with 2 or 3 variables
+

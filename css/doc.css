@@ -1,0 +1,24 @@
+kbd {
+    background-color: #cecece;
+    color: #333;
+    box-shadow: none;
+}
+
+pre, .hljs {
+    background-color: white;
+}
+
+.hljs-command {
+    font-weight: bold;
+    color: #990000;
+    text-decoration: underline;
+}
+
+.hljs-keyword {
+    color: #666;
+    font-weight: normal;
+}
+
+.table {
+    background-color: white;
+}

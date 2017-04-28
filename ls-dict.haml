@@ -1,0 +1,68 @@
+!!! 5
+%html
+  %head
+    = Haml::Engine.new(File.read('_header.haml')).render(Object.new, :title => 'Mathias Soeken / Logic Synthesis Interactive Handbook')
+    %link(href="css/exl.css" rel="stylesheet")
+  %body
+    .container#main-container
+      .row#main-row
+        = Haml::Engine.new(File.read('_nav.haml')).render(Object.new, :page => "research")
+        .col-md-9
+          %h1 Logic Synthesis Interactive Handbook
+          %h2 Exorlink
+          %p(style="text-align: justify")
+            Let
+            %i f
+            be an ESOP expression over
+            %i n
+            variables. Then each product term in
+            %i f
+            consists of literals. Each of the
+            %i n
+            variables can occur in three different ways in a product term. Either it is contained as a positive literal, it is contained as a negative literal, or it is not contained at all. When comparing two product terms, the distance of these two terms is the number of variables that are different in both terms.
+          %p(style="text-align: justify")
+            A pair of two product terms with distance
+            %i d
+            can be transformed into an ESOP expression with
+            %i d
+            terms using the
+            %i Exorlink
+            operation. One can think of the Exorlink operation as a chain of transformation, &ldquo;adjusting&rdquo; one different position at the time. Since there are
+            %i d!
+            different ways of choosing the order of positions, one can obtain
+            %i d!
+            different ESOP expressions using the Exorlink operation.
+          %h4 Interactive Example
+          .panel.panel-info
+            .panel-heading Configure the product terms by clicking on the literals
+            .panel-body
+              .exl-editor
+                .exl-digit#digit-a1(data-state="p" data-var="a")> a
+                .exl-digit#digit-a2(data-state="p" data-var="b")> b
+                .exl-digit#digit-a3(data-state="p" data-var="c")> c
+                .exl-digit#digit-a4(data-state="p" data-var="d")> d
+                .exl-oplus> &oplus;
+                .exl-digit#digit-b1(data-state="p" data-var="a")> a
+                .exl-digit#digit-b2(data-state="p" data-var="b")> b
+                .exl-digit#digit-b3(data-state="p" data-var="c")> c
+                .exl-digit#digit-b4(data-state="p" data-var="d")> d
+              %p(style="margin-top: 10px; margin-bottom: 0px")
+                The two cubes have a distance of
+                %span#exl-distance 0.
+                Orange boxes show in which both products differ. If you have a distance of at least 1, you can pick a permutation in which order the cubes are modified
+          .panel.panel-info
+            .panel-heading Configure the permutation by dragging the numbers around
+            .panel-body
+              .exl-editor#exl-permutation
+              %p#exl-result
+          %p
+            [1] N. Song: Minimization of exclusive sum of product expressions for multi-valued input incompletely specified functions,
+            %i M.S. thesis,
+            Portland State University, 1992.
+          %p
+            [2] A. Mishchenko and M. Perkowski: Fast heuristic minimization of exclusive-sum-of-products, in:
+            %i Reed Muller Workshop
+            2001.
+    %script(src="js/jquery.min.js")
+    %script(src="js/jquery-ui.min.js")
+    %script(src="js/exl.js")

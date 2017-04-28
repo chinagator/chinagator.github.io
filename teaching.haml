@@ -1,0 +1,62 @@
+!!! 5
+%html
+  %head
+    = Haml::Engine.new(File.read('_header.haml')).render(Object.new, :title => 'Mingsong Chen/ Teaching')
+  %body
+    .container#main-container
+      .row#main-row
+        .col-md-8
+          %h1.page-header Teaching
+          %h4.brow Current Course:
+          .row.teachingsize
+            %strong(class= 'col-md-2' style='text-align:right') Spring 2017:
+            .col-md-10{:class=> 'col-md-10 blue' } Computer Architecture
+          .row.big
+            .col-md-10{:class=> 'col-md-offset-2'} Graduate and undergrad elective: Thursday 9:00-11:30 AM in Math Building 113.
+          %br
+          .row.teachingsize
+            %strong(class= 'col-md-2' style='text-align:right') Spring 2017:
+            .col-md-10{:class=> 'col-md-10 blue' } Advanced Embedded System Design
+          .row.big
+            .col-md-10{:class=> 'col-md-offset-2'} Graduate and undergrad elective: Thursday 1:00-15:30 PM in Science Building B226.
+
+          %h4.brow Past Course:
+          .row.teachingsize
+            %strong(class= 'col-md-2' style='text-align:right')
+            .col-md-10{:class=> 'col-md-10 blue' } Theory and Practice of CPS
+          .row.big
+            .col-md-10{:class=> 'col-md-offset-2'} 2011 autumn, 2012 autumn, 2013 autumn, 2014 autumn
+          %br
+          .row.teachingsize
+            %strong(class= 'col-md-2' style='text-align:right')
+            .col-md-10{:class=> 'col-md-10 blue' } Computer Architecture
+          .row.big
+            .col-md-10{:class=> 'col-md-offset-2'} 2013 autumn, 2014 autumn, 2015 autumn, 2016 spring
+          %br
+          .row.teachingsize
+            %strong(class= 'col-md-2' style='text-align:right')
+            .col-md-10{:class=> 'col-md-10 blue' }Automata Theory
+          .row.big
+            .col-md-10{:class=> 'col-md-offset-2'} 2015 autumn
+          %br
+          .row.teachingsize
+            %strong(class= 'col-md-2' style='text-align:right')
+            .col-md-10{:class=> 'col-md-10 blue' } Concurrent Programming Language Design
+          .row.big
+            .col-md-10{:class=> 'col-md-offset-2'} 2013 spring, 2014 spring, 2015 spring, 2015 autumn, 2016 autumn
+          %br
+          .row.teachingsize
+            %strong(class= 'col-md-2' style='text-align:right')
+            .col-md-10{:class=> 'col-md-10 blue' } Software Quality Assurance
+          .row.big
+            .col-md-10{:class=> 'col-md-offset-2'} 2013 autumn
+          %br
+          .row.teachingsize
+            %strong(class= 'col-md-2' style='text-align:right')
+            .col-md-10{:class=> 'col-md-10 blue' } Professional English
+          .row.big
+            .col-md-10{:class=> 'col-md-offset-2'} 2011 autumn, 2012 spring, 2012 autumn
+
+        = Haml::Engine.new(File.read('_nav.haml')).render(Object.new, :page => "teaching")
+
+

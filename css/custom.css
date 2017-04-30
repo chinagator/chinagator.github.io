@@ -16,7 +16,6 @@ html, body {
     /*overflow:hidden;*/
     height: 100%;
     width: 1200px;
-    overflow: auto;
     margin-bottom: 30px;
 }
 

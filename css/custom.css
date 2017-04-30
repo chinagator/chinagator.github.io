@@ -8,7 +8,7 @@ html, body {
     font-size: 16px;
     font-family: arial, sans-serif;
     /*font-size:small;*/
-    /*color:#666;*/
+    /*color:#666;*/ 
 }
 
 #main-container {
@@ -16,6 +16,8 @@ html, body {
     /*overflow:hidden;*/
     height: 100%;
     width: 1200px;
+    overflow: auto;
+    margin-bottom: 30px;
 }
 
 #main-row {
@@ -265,8 +267,8 @@ td.check-column {
     position: fixed;
     
     bottom: 0;
-    left:18.5%;
-    width: 1200px;
+    left:0;
+    width: 100%;
     background-color: brown;
     display: flex;
     justify-content: center;
@@ -276,6 +278,19 @@ td.check-column {
     /*border-width:5px;*/
     /*border-color:#E1E1E1;*/
     /*scrollbar-face-color:white;*/
+}
+
+@media screen and (max-width: 1100px){
+    #navibar .col-md-2 div{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px){
+    #navibar{
+        top: 0;
+        bottom: inherit;
+    }
 }
 
 #navibar a {
